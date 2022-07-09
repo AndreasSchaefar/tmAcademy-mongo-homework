@@ -2,8 +2,6 @@ const {mapUser, getRandomFirstName} = require('./util');
 const connection = require('./config/connection');
 let userCollection;
 
-runUsers();
-
 async function runUsers() {
   await connection.connect();
   await connection.get().dropCollection('users');
