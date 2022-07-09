@@ -1,4 +1,4 @@
-const {mapUser, getRandomFirstName} = require('./util');
+const {mapUser, getRandomFirstName} = require('../util');
 
 let userCollection;
 

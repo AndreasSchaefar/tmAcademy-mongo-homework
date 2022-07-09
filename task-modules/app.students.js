@@ -1,4 +1,4 @@
-const students = require('./students.json');
+const students = require('../students.json');
 let studentsCollection;
 
 async function runStudents(connection) {

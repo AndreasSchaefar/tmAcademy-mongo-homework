@@ -1,8 +1,8 @@
 const connection = require('./config/connection');
 
-const runUsers = require('./app.users');
-const runArticles = require('./app.articles');
-const runStudents = require('./app.students');
+const runUsers = require('./task-modules/app.users');
+const runArticles = require('./task-modules/app.articles');
+const runStudents = require('./task-modules/app.students');
 
 runAll(connection);
 

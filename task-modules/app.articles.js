@@ -1,4 +1,4 @@
-const {mapArticle} = require('./util');
+const {mapArticle} = require('../util');
 let articlesCollection;
 
 async function runArticles(connection) {
