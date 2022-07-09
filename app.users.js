@@ -1,9 +1,8 @@
 const {mapUser, getRandomFirstName} = require('./util');
-const connection = require('./config/connection');
+
 let userCollection;
 
-async function runUsers() {
-  await connection.connect();
+async function runUsers(connection) {
   await connection.get().dropCollection('users');
   await connection.get().createCollection('users');
 
@@ -13,7 +12,6 @@ async function runUsers() {
   await deleteUser('a');
   await updateFirstNames('b');
   await findAllUsers('c');
-  connection.close();
 }
 
 async function createUsersPerDep(numPerDep) {

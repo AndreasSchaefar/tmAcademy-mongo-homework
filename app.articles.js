@@ -1,9 +1,7 @@
 const {mapArticle} = require('./util');
-const connection = require('./config/connection');
 let articlesCollection;
 
-async function runArticles() {
-  await connection.connect();
+async function runArticles(connection) {
   await connection.get().dropCollection('articles');
   await connection.get().createCollection('articles');
 
@@ -14,7 +12,6 @@ async function runArticles() {
   await addTags('a');
   await findArticlesWithTags(['tag2', 'tag1-a']);
   await pullTags(['tag2', 'tag1-a']);
-  connection.close();
 }
 
 async function createArticlesPerType(numPerType) {

@@ -1,9 +1,7 @@
 const students = require('./students.json');
-const connection = require('./config/connection');
 let studentsCollection;
 
-async function runStudents() {
-  await connection.connect();
+async function runStudents(connection) {
   await connection.get().dropCollection('students');
   await connection.get().createCollection('students');
 
@@ -17,8 +15,6 @@ async function runStudents() {
   await deleteStudents(60, 'homework');
   await markStudents(80, 'quiz');
   await groupStudents();
-
-  connection.close();
 }
 
 async function importStudents() {
